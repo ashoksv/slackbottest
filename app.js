@@ -114,7 +114,7 @@ controller.hears(['call me (.*)'],'direct_message,direct_mention,mention',functi
         }
         user.name = name;
         controller.storage.users.save(user,function(err, id) {
-            bot.reply(message,'Got it. I will call you ' + user.name + ' from now on.');
+            bot.reply(message,'Got it! I will call you ' + user.name + ' from now on.');
         });
     });
 });
