@@ -119,11 +119,15 @@ controller.hears(['call me (.*)'],'direct_message,direct_mention,mention',functi
     });
 });
 
-controller.hears(['flip (.*)'], 'direct_message,direct_mention,mention', function(bot, message) {
+controller.hears(['flip (.*)'], 'direct_message,direct_mention,mention',function(bot, message) {
     var matches = message.text.match(/flip (.*)/i);
     var text_to_flip = matches[1];
     var flipped_text = flipString(text_to_flip);
-    bot.reply('I flipped ' + text_to_flip + ' to ' + flipped_text + '!')
+    bot.reply('I flipped ' + text_to_flip + ' to ' + flipped_text + '!');
+});
+
+controller.hears(['Is Sweeky poopy?'], 'direct_message,direct_mention,mention',function(bot, message) {
+    bot.reply('Of course!');
 });
 
 controller.hears(['what is my name','who am i'],'direct_message,direct_mention,mention',function(bot, message) {
